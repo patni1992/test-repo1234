@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <nav class="navbar  is-spaced has-shadow">
+            <div class="navbar-brand">
+                <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div id="navbarExampleTransparentExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item is-size-5" href="https://bulma.io/">
+                        Home
+                    </a>
+                    <a class="navbar-item is-size-5" href="https://bulma.io/">
+                        Projects
+                    </a>
+                    <a class="navbar-item is-size-5" href="https://bulma.io/">
+                        Contact
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <section class="section ">
+            <h1 id="demo" class="title  has-text-weight-normal"></h1>
+            <p class="is-size-3">I am a web developer. My passion is building simple, beautiful user experiences.</p>
+        </section>
+        <section class="section">
+            <div class="terminal">
+                <div class="terminal__header">
+
+                    <div class="terminal__btn terminal__btn--green"></div>
+                    <div class="terminal__btn terminal__btn--red"></div>
+                    <div class="terminal__btn terminal__btn--yellow"></div>
+
+                    <span class="terminal__header__center">
+                        🏠 Patrik_Nilsson
+                    </span>
+                </div>
+                <div class="terminal__window">
+                    <p class="terminal__input-text">> contactInfo</p>
+                    <p class="terminal__output-text">["patriknilsson1992@gmail.com", "Github", "Linkedin"]</p>
+                    <p class="terminal__input-text">> resume</p>
+                    <p>
+                        <a class="terminal__output-text terminal__output-text--link " href="/cv">patriknilsson.pdf
+                        </a>
+                    </p>
+                    <p class="terminal__input-text">> Frontend skills</p>
+                    <p class="terminal__output-text">["JavaScript", "React", "Redux", "Sass"]</p>
+                    <p class="terminal__input-text">> Backend skills</p>
+                    <p class="terminal__output-text">["Node", "MySQL", "MongoDB", "Java" "Spring"]</p>
+                    <p class="terminal__input-text">> hoursOfCoding</p>
+                    <p class="terminal__output-text terminal__output-text--error">Error Infinity</p>
+                    <p class="terminal__input-text">>
+                        <span class="terminal__blinking-cursor">&nbsp;</span>
+                    </p>
+                </div>
+            </div>
+
+        </section>
+        <section data-card class="section">
+            <h2 class="title is-size-2 has-text-weight-normal">> My Projects</h2>
+            <div class="columns is-multiline spacing  ">
+                {{#each htmlWebpackPlugin.options.data.projects}}
+                <div class="column is-12">
+                    <div class="card">
+                        <div class="columns is-12">
+                            <div class="card-image column is-5 is-paddingless">
+                                <figure class="image project-img">
+                                    <img   data-index={{@index}} data-project-img src="{{frontImg}}" alt="Placeholder image ">
+                                </figure>
+                            </div>
+                            <div class="column is-6 ">
+                                <div class="card-content ">
+                                    <div class="media ">
+                                        <div class="media-content ">
+                                            <h3 class="title is-size-4 ">{{title}}</h3>
+                                        </div>
+                                    </div>
+                                    <div class="content ">
+                                        <p class="is-size-5 ">{{description}}</p>
+                                        <div class="tags">
+                                            {{#each tags}}
+                                            <span class="tag  is-medium ">{{this}}</span>
+                                            {{/each}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                  
+                </div>
+                {{/each}}
+            </div>
+        </section>
+        <section class="section">
+            <h2 class="title is-size-2 has-text-weight-normal">> Get in touch</h2>
+            <form id="email-form">
+                <div class="columns">
+                    <div class="column is-6">
+                        <div class="field">
+                            <label class="label">Subject</label>
+
+                            <input class="input " name="subject" type="text" required placeholder="Text input">
+
+                        </div>
+                        <div class="field">
+                            <label class="label">Name</label>
+
+                            <input class="input" name="name" type="text" required placeholder="Text input">
+
+                        </div>
+                        <div class="field">
+                            <label class="label">Email</label>
+
+                            <input class="input" name="email" required type="email" placeholder="Email input">
+
+
+                        </div>
+                    </div>
+                    <div class="column is-6">
+                        <div class="field">
+                            <label class="label">Message</label>
+                            <div class="control">
+                                <textarea rows="7" class="textarea" name="message" required placeholder="Textarea"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button id="send-btn" class="button is-success is-medium">Send email</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+.carosouel__img {
+    width: 100%;
+    max-height: 14rem;
+    padding-top: 2rem; 
+    cursor: pointer;
+}
+
+.carosouel__main-img {
+    width: 100%;
+    max-height: 620px;
+  
+}
+
+.carosouel__selected {
+    border: 2px solid black;
+    box-shadow: 5px 3px 30px black;
+}
