@@ -21,9 +21,9 @@ if (process.env.NODE_ENV !== "production") {
   
   server.use(webpackDevMiddleware);
   server.use(webpackHotMiddlware);
-}
+} 
 
-const staticMiddleware = express.static("dist");
+const staticMiddleware = express.static("build");
 server.use(staticMiddleware);
 
 const PORT = process.env.PORT || 8080;
@@ -38,7 +38,8 @@ server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
 
 server.get("/cv", function(req, res) {
-  var filePath = path.join(__dirname, "../dist/images/cv-2018-pn-921113.pdf");
+  console.log(path.join(__dirname, "../build/images/cv-2018-pn-921113.pdf"))
+  var filePath = path.join(__dirname, "../build/images/cv-2018-pn-921113.pdf");
 
   res.download(filePath);
 });
